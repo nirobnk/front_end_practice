@@ -1,16 +1,18 @@
-*{
-    margin 0;
+* {
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: sans-serif;
 }
 
-.hero{
-    position: raltive;
+.hero {
+    position: relative;
     width: 100%;
-    height:100vh;
+    height: 100vh;
     background: #eff4fd;
 }
-nav{
+
+nav {
     display: flex;
     width: 84%;
     margin: auto;
@@ -19,51 +21,46 @@ nav{
     justify-content: space-between;
 }
 
-nav ul li{
-    display: inline-block;
+nav ul {
+    display: flex;
     list-style: none;
-    margin: 10px 20px;
 }
-nav ul li a{
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
     text-decoration: none;
     color: #000;
     font-weight: bold;
-
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
     color: orange;
-
 }
 
-.detail{
-    margin-left: 8%;
+.detail {
+    margin: 0 8%;
     margin-top: 13%;
 }
 
-.detail h1{
-    font-size: 50px;
+.detail h1 {
+    font-size: 2.5rem;
     color: #212121;
     margin-bottom: 20px;
-
 }
 
-span{
+span {
     color: orange;
 }
 
-.detail p{
+.detail p {
     color: #555;
-    line-height: 22px;
+    line-height: 1.6;
 }
 
-img{
-    
-    width: 12%;
-    height: 5%;
-}
-
-.detail a{
+.detail a {
     background: #212121;
     padding: 10px 18px;
     text-decoration: none;
@@ -73,35 +70,115 @@ img{
     margin: 30px 0;
     border-radius: 5px;
 }
-.images{
-    width: 45%;
-    height: 80%;
+
+.detail a:hover {
+    background-color: orange;
+    color: #212121;
+}
+
+.images {
     position: absolute;
     bottom: 0;
     right: 100px;
+    width: 45%;
+    height: 80%;
 }
-.images img{
+
+.images img {
+    width: 100%;
     height: 100%;
     position: absolute;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
     transition: bottom 1s, left 1s;
-    width: 100%;
 }
-.images:hover .shape{
+
+.images:hover .shape {
     bottom: 40px;
 }
 
-.images:hover .my{
+.images:hover .my {
     left: 45%;
 }
-nav span{
-    font-size: 40px;
-    font-weight: bold;
+
+nav .logo {
+    width: 100px;
 }
 
-.detail a:hover{
-    background-color: orange;
-    color: #212121
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .detail h1 {
+        font-size: 2rem;
+    }
+
+    .images {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    .images img {
+        position: static;
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .detail {
+        margin: 0 5%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    .detail h1 {
+        font-size: 1.5rem;
+    }
+
+    .detail p {
+        font-size: 0.9rem;
+    }
+
+    .detail a {
+        padding: 8px 16px;
+    }
+
+    nav .logo {
+        width: 80px;
+    }
+
+    .detail {
+        margin: 20px 5%;
+    }
+
+    .images {
+        width: 100%;
+        right: 0;
+    }
+
+    .images img {
+        width: 100%;
+        height: auto;
+    }
 }
